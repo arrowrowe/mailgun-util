@@ -4,7 +4,9 @@
   "description": "Utilities for Mailgun.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ."
+    "check": "eslint --ignore-path .gitignore .",
+    "test": "istanbul cover _mocha 'test/**/*-spec.js' -- -R spec && istanbul check-coverage --statement 100 --branch 100 --function 100",
+    "ct": "npm run check && npm test"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,11 @@
   },
   "homepage": "https://github.com/arrowrowe/mailgun-util",
   "devDependencies": {
-    "eslint": "1.6.0"
-  }
+    "chai": "3.3.0",
+    "eslint": "1.6.0",
+    "istanbul": "0.3.22",
+    "mocha": "2.3.3",
+    "sinon": "1.17.1"
+  },
+  "dependencies": {}
 }
