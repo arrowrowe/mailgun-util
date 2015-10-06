@@ -1,6 +1,6 @@
 {
   "from": "Someone <someone@your.domain>",
-  "to": "Receiver1 <r1@some.domain>, Receiver1 <r2@some.domain>",
+  "to": "Receiver1 <r1@some.domain>, Receiver2 <r2@some.domain>",
   "subject": "Here is a sample mail",
   "text": "Hi there~\n\nHello~\n"
 }
