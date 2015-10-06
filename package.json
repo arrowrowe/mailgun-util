@@ -1,0 +1,25 @@
+{
+  "name": "mailgun-util",
+  "version": "0.0.1",
+  "description": "Utilities for Mailgun.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arrowrowe/mailgun-util.git"
+  },
+  "keywords": [
+    "Mailgun"
+  ],
+  "author": "arrowrowe <arrowrowe@gmail.com> (https://github.com/arrowrowe)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arrowrowe/mailgun-util/issues"
+  },
+  "homepage": "https://github.com/arrowrowe/mailgun-util",
+  "devDependencies": {
+    "eslint": "1.6.0"
+  }
+}
