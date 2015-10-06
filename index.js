@@ -1,5 +1,8 @@
+var PACKAGE = require('./package');
+
 module.exports = {
-  version: require('./package').version,
+  version: PACKAGE.version,
   config: require('./.env'),
-  send: require('./lib/send')
+  send: require('./lib/send'),
+  log: require('log4js').getLogger(PACKAGE.name)
 };

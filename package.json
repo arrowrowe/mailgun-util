@@ -29,7 +29,10 @@
     "mocha": "2.3.3",
     "sinon": "1.17.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "log4js": "0.6.27",
+    "needle": "0.10.0"
+  },
   "config": {
     "ghooks": {
       "pre-commit": "npm run ct"
