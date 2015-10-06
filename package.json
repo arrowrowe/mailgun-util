@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Utilities for Mailgun.",
   "main": "index.js",
+  "bin": {
+    "mgu": "bin/mgu.js"
+  },
   "scripts": {
     "check": "eslint --ignore-path .gitignore .",
     "test": "istanbul cover _mocha 'test/**/*-spec.js' -- -R spec && istanbul check-coverage --statement 100 --branch 100 --function 100",
@@ -30,6 +33,7 @@
     "sinon": "1.17.1"
   },
   "dependencies": {
+    "commander": "2.8.1",
     "fs-extra": "0.24.0",
     "log4js": "0.6.27",
     "needle": "0.10.0"
