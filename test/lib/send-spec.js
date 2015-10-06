@@ -1,18 +1,18 @@
 var expect = require('chai').expect;
 var sinon = require('sinon');
 
-var send = require('../../lib/send');
+var mgu = {
+  config: {api: 'api', key: 'key'},
+  log: {
+    info: sinon.spy(),
+    warn: sinon.spy()
+  },
+  send: require('../../lib/send')
+};
 var needle = require('needle');
 
 describe('lib/send', function () {
 
-  var mgu = {
-    config: {api: 'api', key: 'key'},
-    log: {
-      info: sinon.spy(),
-      warn: sinon.spy()
-    }
-  };
   var data = {
     'from': 'Sample <me@sample.io>',
     'to': 'Receiver1 <r1@some.io>, Receiver2 <r2@some.io>',
@@ -24,7 +24,7 @@ describe('lib/send', function () {
 
     sinon.stub(needle, 'post');
 
-    send.call(mgu, data);
+    mgu.send(data);
 
     expect(needle.post.calledWith(mgu.config.api, data, {
       username: 'api',
@@ -41,7 +41,7 @@ describe('lib/send', function () {
       callback('err');
     });
 
-    send.call(mgu, data);
+    mgu.send(data);
 
     expect(mgu.log.warn.calledWith('err')).to.equal(true);
 
@@ -55,7 +55,7 @@ describe('lib/send', function () {
       callback(null, 'resp', 'body');
     });
 
-    send.call(mgu, data);
+    mgu.send(data);
 
     expect(mgu.log.info.calledWith('resp', 'body')).to.equal(true);
 
