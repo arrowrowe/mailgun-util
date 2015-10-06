@@ -52,12 +52,12 @@ describe('lib/send', function () {
   it('logs http results', function () {
 
     sinon.stub(needle, 'post', function (url, data, option, callback) {
-      callback(null, 'resp', 'body');
+      callback(null, 'resp', {message: 'message'});
     });
 
     mgu.send(data);
 
-    expect(mgu.log.info.calledWith('resp', 'body')).to.equal(true);
+    expect(mgu.log.info.calledWith('message')).to.equal(true);
 
     needle.post.restore();
 
